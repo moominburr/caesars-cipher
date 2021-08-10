@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caesae Cipher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="section">
+      <div class="top"><h1>Caesar's cipher</h1></div>
+      <div class="subheading">
+        <p>
+          Welcome to Caesar's cipher. In cryptography, a Caesar cipher, also known as Caesar's
+          cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most
+          widely known encryption techniques. It is a type of substitution cipher in which each
+          letter in the plaintext is replaced by a letter some fixed number of positions down the
+          alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B,
+          and so on. The method is named after Julius Caesar, who used it in his private
+          correspondence.
+        </p>
+        <p>
+          Type your message into the box below and select your cipher index. Your coded message will
+          be at the bottom of your screen.
+        </p>
+      </div>
+      <div class="middle-left">
+        <label for="original-string">Secret message</label
+        ><input id="original-string" type="text" />
+      </div>
+      <div class="middle-right">
+        <label for="cipher-number">Cipher index </label
+        ><input id="cipher-number" type="number" /><button class="submit">Get my cipher!</button>
+      </div>
+      <div class="bottom"><h3 class="cipher-answer"></h3></div>
+    </div>
+  </body>
+  <script src="caesar.js"></script>
+</html>
