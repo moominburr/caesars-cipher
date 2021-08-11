@@ -2,6 +2,17 @@ const submitBtn = document.querySelector(".submit");
 const textInput = document.querySelector("#original-string");
 const cipherIndex = document.querySelector("#cipher-number");
 const bottom = document.querySelector(".bottom");
+let answerHolder = document.createElement("h3");
+
+submitBtn.addEventListener("click", () => {
+  let inputString = textInput.value;
+  textInput.value = "";
+  let inputIndex = cipherIndex.value;
+  cipherIndex.value = 0;
+  let answer = caesar(inputString, inputIndex);
+  answerHolder.textContent = answer;
+  bottom.appendChild(answerHolder);
+});
 
 const caesar = function (string, n) {
   let arrayCharCode = [];
@@ -17,7 +28,7 @@ const caesar = function (string, n) {
     let shiftCode;
     // check if lowercase
     if (charCode >= 97 && charCode <= 122) {
-      shiftCode = charCode + nN;
+      shiftCode = charCode + nN * 1;
       if (shiftCode > 122) {
         // adjustments to wrap around from a
         let num = shiftCode - 122;
@@ -33,11 +44,12 @@ const caesar = function (string, n) {
       }
     } // check if uppercase
     else if (charCode >= 65 && charCode <= 90) {
-      shiftCode = charCode + nN;
+      shiftCode = charCode + nN * 1;
       if (shiftCode > 90) {
         // adjustments to wrap around from A
         let num = shiftCode - 90;
         let newNum = 64 + num;
+
         arrayCharCode.push(newNum);
       } else if (shiftCode < 65) {
         // adjustments to wrap around from Z
@@ -52,6 +64,7 @@ const caesar = function (string, n) {
       arrayCharCode.push(charCode);
     }
   });
+
   arrayCharCode.forEach((code) => {
     let letter = String.fromCharCode(code);
     arrayStrings.push(letter);
